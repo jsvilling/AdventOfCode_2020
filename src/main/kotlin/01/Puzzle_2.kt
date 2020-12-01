@@ -1,20 +1,20 @@
 package `01`
 
-import java.util.*
 
 /**
  * @author J. Villing
  */
 class Puzzle_2 {
 
+    /**
+     * Horribly inefficient at O(n³).
+     * If there is time I'll find a more efficient solution.
+     */
     fun solve(t: Int, input: IntArray): Int {
         for (i: Int in input.indices) {
             for (j: Int in input.indices) {
                 for (k: Int in input.indices) {
                     if (input[i] + input[j] + input[k] == t) {
-                        println(input[i])
-                        println(input[j])
-                        println(input[k])
                         return input[i] * input[j] * input[k]
                     }
                 }

@@ -14,9 +14,6 @@ class Puzzle_1 {
         for (i: Int in 0..j) {
             val k: Int = lineSearch(input, t-input[i], j)
             if ( k < input.size && input[i] + input[k] == t) {
-                print(input[i])
-                print("    ")
-                print(input[k])
                 return input[i] * input[k]
             }
         }
