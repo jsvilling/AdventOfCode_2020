@@ -13,7 +13,7 @@ class Puzzle_1 {
             .count()
     }
 
-    fun isValidPasswordEntry(x: String): Boolean {
+    private fun isValidPasswordEntry(x: String): Boolean {
         val y: List<String> = x.split(" ", "-", ": ")
 
         val min: Int = Integer.valueOf(y.get(0))
@@ -30,9 +30,6 @@ class Puzzle_1 {
 
         return count in min..max;
     }
-
-
-
 
 }
 
