@@ -6,9 +6,9 @@ import java.io.File
  * @author J. Villing
  */
 object Data {
-    val input = File("src/main/resources/input.txt").readLines()
-    val inputSmall = File("src/main/resources/inputsmall.txt").readLines()
-    val props = listOf<String>(
+    val input = File("src/main/resources/04/input.txt").readLines()
+    val inputSmall = File("src/main/resources/04/inputsmall.txt").readLines()
+    val props = listOf(
         "byr",
         "iyr",
         "eyr",
