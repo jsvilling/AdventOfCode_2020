@@ -14,7 +14,7 @@ class Puzzle_1 {
             .max { o1, o2 ->  o1 - o2}
     }
 
-    private fun solve(num: String): Int {
+    fun solve(num: String): Int {
         var c = 128;
 
         var l = 0
