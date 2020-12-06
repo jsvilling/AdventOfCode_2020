@@ -1,34 +1,45 @@
 package `06`
 
-import java.util.*
-
-
 /**
  * @author J. Villing
  */
-class Puzzle_1 {
+class Puzzle_2 {
 
-    fun solve(input: List<String>): Long {
-        var count = 0L
+    fun solve(input: List<String>): Int {
         var entry = ""
+        var groupSize = 0
 
+        val ml: MutableList<Pair<String, Int>> = mutableListOf()
         for (line: String in input) {
             if (line == "") {
-                count += entry.chars().distinct().count()
+                ml.add(Pair(entry, groupSize))
+                groupSize = 0
                 entry = ""
             } else {
                 entry += line
+                groupSize++
             }
         }
+        ml.add(Pair(entry, groupSize))
 
-        count += entry.chars().distinct().count()
-        return count
+
+        return ml.stream()
+            .mapToInt { getGroupCount(it.first, it.second) }
+            .sum()
     }
 
+    fun getGroupCount(entry: String, groupSize: Int): Int {
+        var count = 0
+        for (c: Char in entry.toCharArray().distinct()) {
+            if (entry.filter { c == it }.count() == groupSize) {
+                count ++
+            }
+        }
+        return count
+    }
 }
 
-
 fun main() {
-    val res = Puzzle_1().solve(Data.input)
+    val res = Puzzle_2().solve(Data.input)
     print(res)
 }
