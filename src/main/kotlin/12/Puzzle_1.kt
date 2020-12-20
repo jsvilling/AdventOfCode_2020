@@ -19,7 +19,7 @@ class Puzzle_1 {
         return ship.north.absoluteValue + ship.east.absoluteValue
     }
 
-    fun findCommand(key: Char, ship: Ship): (Ship, Int) -> Ship {
+    private fun findCommand(key: Char, ship: Ship): (Ship, Int) -> Ship {
         val command = commands[key]
         if (command != null) {
             return command
@@ -35,7 +35,7 @@ data class Ship(
     val orientation: Int
 )
 
-val commands = mapOf(
+private val commands = mapOf(
     'N' to { s: Ship, i: Int -> Ship(s.east, s.north + i, s.orientation) },
     'S' to { s: Ship, i: Int -> Ship(s.east, s.north - i, s.orientation) },
     'E' to { s: Ship, i: Int -> Ship(s.east + i, s.north, s.orientation) },

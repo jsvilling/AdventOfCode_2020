@@ -12,7 +12,9 @@ object Data {
         "N3",
         "F7",
         "R90",
-        "F11"
+        "F11",
+        "L90",
+        "R180"
     )
 
     val input = File("src/main/resources/12/input12.txt").readLines()
